@@ -11,3 +11,8 @@ jobs:
           node -v
           npm -v
           echo "테스트다 테스트"
+  parallel-job:
+    runs-on: macos-latest
+    steps:
+      - name: show sofrware version
+        run: sw_vers
