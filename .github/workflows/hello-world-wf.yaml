@@ -1,5 +1,6 @@
 name: first-workflow
 on: [push]
+
 jobs:
   shell-cmd-job:
     runs-on: ubuntu-latest
@@ -10,9 +11,16 @@ jobs:
         run: |
           node -v
           npm -v
-          echo "테스트다 테스트"
   parallel-job:
     runs-on: macos-latest
     steps:
-      - name: show sofrware version
+      - name: show software version
         run: sw_vers
+  dependant-job:
+    runs-on: windows-latest
+    needs: shell-cmd-job
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"
+      - name: Error Step
+        run: doesnotexit
