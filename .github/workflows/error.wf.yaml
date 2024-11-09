@@ -22,7 +22,3 @@ jobs:
         run: echo "::add-mask::Secret String"
       - name: Echo a secret
         run: echo "Secret String"
-      - name: Echo a secrets
-        run: echo "fdsfdsfsd"
-      - name: Echo a secret
-        run: echo "erseres"
